@@ -1,0 +1,211 @@
+/* Citation: The overall design and many of the parameter values 
+were inspired by the Signal messenger desktop Electron app. */
+
+
+/* Citation: html,body boilerplate for functional width/height 100% setting in children.
+https://stackoverflow.com/questions/21357238/css-height-100-percent-not-working*/
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+}
+
+.timeline {
+    position: relative;
+    background-color: #121212;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.module {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.module .message {
+    font-family: 'Noto Serif', serif;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: start;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+.module .metadata {
+    font-family: 'Noto Serif', serif;
+    font-size: 12px;
+    line-height: 8px;
+    letter-spacing: 0.5px;
+    color: #6e6e6e;
+    text-align: end;
+}
+
+.module .incoming {
+    position: relative;
+    background-color: #c8518c;
+    color: #e9e9e9;
+    border: 1px solid #2e2e2e;
+    border-radius: 16px;
+    padding: 10px;
+    margin: 5px;
+    min-width: 0px;
+    max-width: 500px;
+    overflow: hidden;
+    flex: 2 10 content;
+    align-self: flex-start;
+}
+
+.module .outgoing {
+    position: relative;
+    background-color: #3b3b3b;
+    color: #e9e9e9;
+    border: 1px solid #2e2e2e;
+    border-radius: 16px;
+    padding: 10px;
+    margin: 5px;
+    min-width: 0px;
+    max-width: 500px;
+    overflow: hidden;
+    flex: 2 10 content;
+    align-self: flex-end;
+}
+
+.compose {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0px;
+    padding-top: 10px;
+    display: grid;
+    grid-template-areas: "textarea" "button";
+    grid-template-columns: 9.5fr 0.5fr;
+}
+
+.compose textarea {
+    background-color: #3b3b3b;
+    color: #e9e9e9;
+    border: 1px solid #121212;
+    resize: none;
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    box-sizing: content-box;
+    padding: 10px 10px;
+}
+
+.compose button {
+    background-color: #5e5e5e;
+    color: gainsboro;
+    border-radius: 5px;
+}
+
+
+/* Citation: Removing focus outline from textarea.
+https://stackoverflow.com/questions/3397113/how-to-remove-focus-border-outline-around-text-input-boxes-chrome*/
+
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+/* Citation: Fade-in effect
+https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08*/
+
+.fade-in {
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Citation: Scrollbar styling.
+https://www.digitalocean.com/community/tutorials/css-scrollbars */
+
+
+/* Works on Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #5e5e5e #121212;
+}
+
+
+/* Works on Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #121212;
+    border-radius: 20px;
+    border: 3px solid #5e5e5e;
+}
