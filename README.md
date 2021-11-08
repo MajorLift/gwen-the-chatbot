@@ -1,6 +1,6 @@
 # Gwen the Chatbot
 
-A simple chatbot completed as a first foray into HTML, CSS, and jQuery.
+A simple chatbot completed using only HTML, CSS, and jQuery.
 
 <img src="https://user-images.githubusercontent.com/34228073/120909397-b44cb800-c642-11eb-9bed-b843014fa499.gif" width=600 />
 
